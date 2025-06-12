@@ -1,0 +1,209 @@
+/* ----- El CSS esta hecho mirando videos y haciendo gran parte del codigo con IA, no se mucho CSS,
+se lo justo para saber la diferencia entre uan class e ID, o para hacer cambios chicos como mover partes,
+cambiar los colores, tamaños, cositas chiquitas ----- */
+
+:root {
+            --color-red: #ef4444;
+            --color-blue: #3b82f6;
+            --color-yellow: #f59e0b;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #11182c;
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: var(--gray-100);
+            color: var(--gray-800);
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* --- Contenedores y Layout --- */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        /* Estilo para el contenedor de los equipos */
+        main > div:first-of-type {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* --- Encabezado --- */
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--color-blue);
+        }
+        
+        /* --- Secciones de Equipo (según tu clase .selecTeam) --- */
+        .selecTeam {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+        }
+        
+        .selecTeam h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .team1 { color: var(--color-red); }
+        .team2 { color: var(--color-blue); }
+
+        /* Contenedor de las tarjetas (según tu clase .boxPokemon) */
+        .boxPokemon {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1rem;
+            min-height: 150px; 
+        }
+
+        /* --- Tarjetas de Pokémon (según tu clase .mostrarDatosPokemon) --- */
+        .mostrarDatosPokemon {
+            background-color: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            text-align: center;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .mostrarDatosPokemon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .mostrarDatosPokemon img {
+            margin: 0 auto 0.5rem auto;
+            height: 6rem;
+            width: 6rem;
+            object-fit: contain;
+        }
+
+        .mostrarDatosPokemon .name {
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: capitalize;
+        }
+        
+        /* Estilos para las estadísticas individuales (según tus clases) */
+        .statAttack { color: var(--color-red); font-size: 0.75rem; }
+        .statDefense { color: var(--color-blue); font-size: 0.75rem; }
+
+        /* --- Estadísticas Totales (según tus clases .boxStats1 y .boxStats2) --- */
+        .boxStats1, .boxStats2 {
+            text-align: center;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+        
+        .boxStats1 { background-color: rgba(239, 68, 68, 0.1); }
+        .boxStats2 { background-color: rgba(59, 130, 246, 0.1); }
+
+        .boxStats1 p, .boxStats2 p { margin: 0.25rem 0; }
+        .tutulo { font-size: 1.125rem; font-weight: 700; } /* Estilo para tu clase .tutulo */
+        .TotalstatAttack { font-weight: 600; color: var(--color-red); }
+        .TotalstatDefense { font-weight: 600; color: var(--color-blue); }
+
+        /* --- Botón y Resultados --- */
+        .combatControl {
+            text-align: center;
+        }
+
+        .combatControl button {
+            background-color: var(--color-yellow);
+            color: var(--gray-900);
+            font-weight: 700;
+            font-size: 1.25rem;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .combatControl button:hover {
+            background-color: #d97706; /* color-yellow-600 */
+            transform: scale(1.05);
+        }
+        
+        #resultadoCombat {
+            margin: 2rem auto 0 auto;
+            padding: 1.5rem;
+            background-color: var(--gray-800);
+            color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+            max-width: 56rem;
+            transition: opacity 0.5s;
+        }
+        
+        /* Clase para ocultar los resultados al inicio */
+        .hidden {
+            display: none !important;
+        }
+
+        #resultadoCombat h3 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: var(--color-yellow);
+        }
+
+        /* Estilos para el resultado del combate (según tus clases) */
+        .result-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            text-align: left;
+        }
+
+        .resultadoTeam1, .resultadoTeam2 {
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+        
+        .resultadoTeam1 { background-color: rgba(239, 68, 68, 0.2); }
+        .resultadoTeam2 { background-color: rgba(59, 130, 246, 0.2); }
+        
+        .resultadoTeam1 h4, .resultadoTeam2 h4 {
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .diferencia {
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+        .diferencia span {
+            font-size: 1.25rem;
+        }
+
+        /* --- Media Queries para Responsividad --- */
+        @media (min-width: 1024px) { /* lg breakpoint */
+            main > div:first-of-type {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }

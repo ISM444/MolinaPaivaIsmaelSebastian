@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3VS3.Pokemon</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Batalla 3 VS 3 Pokemon</h1>
+        </header>
+
+        <main id="combat">
+            <div>
+                <!-- Equipo 1 -->
+                <div class="selecTeam">
+                    <h2 class="team1">Equipo 1</h2>
+                    <div id="team1Pokemon" class="boxPokemon"></div>
+                    <div id="team1Stats" class="boxStats1"></div>
+                </div>
+                <!-- Equipo 2 -->
+                <div class="selecTeam">
+                    <h2 class="team2">Equipo 2</h2>
+                    <div id="team2Pokemon" class="boxPokemon"></div>
+                    <div id="team2Stats" class="boxStats2"></div>
+                </div>
+            </div>
+            <div class="combatControl">
+                <!-- boton para iniciar la pelea -->
+                <button onclick="botonCombat()">¡Iniciar batalla Pokemon!</button>
+                <div id="resultadoCombat" class="resultado hidden"></div>
+            </div>
+        </main>
+    </div>
+</body>
+    <script src="js/main.js"></script>
+</html>
